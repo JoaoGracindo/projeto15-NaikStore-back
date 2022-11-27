@@ -4,17 +4,18 @@ dotenv.config();
 
 const mongoClient = new MongoClient(process.env.MONGO_URI);
 
-try{
-    mongoClient.connect()
-} catch(error){
-    console.log(error)
-}
 
-const db = mongoClient.db("naik")
-const productsCollection = db.collection("products")
-
-export{
+try {
+    await mongoClient.connect();
+  } catch (err) {
+    console.log(err);
+  }
+  
+  const db = mongoClient.db("naik")
+  export const usersCollection = db.collection("users");
+  export const sessionsCollection = db.collection("sessions");
+  const productsCollection = db.collection("products");
+  export{
     productsCollection
-}
-
+};
 
