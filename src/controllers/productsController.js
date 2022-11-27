@@ -1,3 +1,4 @@
+import { ObjectID } from "bson";
 import { productsCollection } from "../database/db.js"
 
 //Registro de produtos
@@ -15,11 +16,14 @@ export async function registerProducts(req,res){
 //Pegar lista de produtos
 export async function getProducts(req,res){
     const category = req.params.category;
+    const id = req.query.id
     let products;
     try{
         if(category){
             products = await productsCollection.find({category}).toArray()
-        } else {
+        } else if(id) {
+            products = await productsCollection.find({_id: ObjectID(id)}).toArray()
+        } else{
             products = await productsCollection.find().toArray()
         }
         
