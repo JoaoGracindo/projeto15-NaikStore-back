@@ -1,5 +1,5 @@
 import {sessionsCollection, usersCollection } from "../database/db.js";
-import { userSchema, userRegisterSchema } from "../schemas/userSchemas.js";
+import { userSchema, userRegisterSchema } from "../models/userModels.js";
 import bcrypt from 'bcrypt';
 
 export const userRegisterValidation = (req, res, next)=>{
