@@ -2,13 +2,20 @@ import { MongoClient } from "mongodb";
 import dotenv from "dotenv";
 dotenv.config();
 
-export const mongoClient = new MongoClient(process.env.MONGO_URI);
+const mongoClient = new MongoClient(process.env.MONGO_URI);
 
-try{
-    const db = await mongoClient.connect()
-    const userCollection = db.collection("users");
-    const productCollection = db.collection("products")
 
-} catch(err){
-    console.log(err)
-}
+try {
+    await mongoClient.connect();
+  } catch (err) {
+    console.log(err);
+  }
+  
+  const db = mongoClient.db("naik")
+  export const usersCollection = db.collection("users");
+  export const sessionsCollection = db.collection("sessions");
+  const productsCollection = db.collection("products");
+  export{
+    productsCollection
+};
+
