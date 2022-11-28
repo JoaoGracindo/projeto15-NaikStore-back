@@ -6,7 +6,6 @@ import productsRoutes from "./routes/productsRoutes.js"
 import cartRoutes from "./routes/cartRoutes.js"
 dotenv.config()
 
-//"mongodb+srv://mymovieserver:6Slrau3UKuou1jIT@cluster0.1lcgweb.mongodb.net/?retryWrites=true&w=majority"
 
 const app = express()
 app.use(express.json())
