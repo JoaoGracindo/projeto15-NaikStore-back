@@ -4,7 +4,7 @@ import {
     getCartProducts,
     addToCart,
     removeFromCart,
-    removeAllFromCart
+    checkout
 } from "../controllers/cartControllers.js"
 
 
@@ -15,7 +15,7 @@ route.use(tokenValidation)
 route.get("/carrinho", getCartProducts);
 route.post("/carrinho", addToCart);
 route.delete("/carrinho", removeFromCart);
-route.delete("/checkout", removeAllFromCart);
+route.post("/checkout", checkout);
 
 export default route;
 

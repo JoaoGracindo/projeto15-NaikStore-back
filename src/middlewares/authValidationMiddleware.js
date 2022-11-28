@@ -5,7 +5,7 @@ import { sessionsCollection, usersCollection } from "../database/db.js";
 export const tokenValidation = async (req, res, next) => {
     const { authorization } = req.headers;
       const token = authorization?.replace("Bearer ", "");
-      console.log(req.headers, "token")
+      console.log(req)
       if (!token) {
         
         return res.sendStatus(401);

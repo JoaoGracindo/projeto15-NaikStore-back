@@ -14,6 +14,7 @@ try {
   const db = mongoClient.db("naik")
   export const usersCollection = db.collection("users");
   export const sessionsCollection = db.collection("sessions");
+  export const salesCollection = db.collection("sales")
   const productsCollection = db.collection("products");
   export{
     productsCollection
