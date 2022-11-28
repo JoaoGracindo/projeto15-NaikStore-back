@@ -19,4 +19,4 @@ app.use(productsRoutes)
 app.use(cartRoutes)
 
 
-app.listen(5000, console.log("Server is running..."))
+app.listen(process.env.PORT, console.log(`Server is running ins port ${process.env.PORT}...`))
